@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int,int> ele;
+        int max = 0, num = 0;
+        for(auto n : nums){
+            ele[n]++;
+            if(max < ele[n]){
+                max = ele[n];
+                num = n;
+            }
+        }
+
+        return num;
+    }
+};
